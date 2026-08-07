@@ -7,11 +7,11 @@ filmes = {
  }
 df = pd.DataFrame(filmes)
 
-df.info()
+df.info() 
 print(df.head())
 print(df.describe())
 
-plt.bar(df["Filme"], df["Nota"])
+plt.bar(df["Filme"], df["Nota"]) #Cria gráfico de barras
 plt.title("Nota dos filmes")
 plt.xlabel("Filme")
 plt.ylabel("Nota")

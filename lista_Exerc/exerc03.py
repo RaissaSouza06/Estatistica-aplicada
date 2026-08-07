@@ -1,11 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dados = {
+lista = {
     "Lista" : [12, 25, 18, 40, 32, 11, 9, 28, 37, 15]
 }
 
-df = pd.DataFrame(dados)
+df = pd.DataFrame(lista)
 
 print(len(df)) #Mostrar quantidade de elementos.
 print(sum(df["Lista"])) #Soma dos valores
