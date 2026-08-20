@@ -2,7 +2,7 @@ import pandas as pd
 
 df=pd.read_csv("dados.csv")
 
-nAmostra = 1000
+nAmostra = 1000 #cria variavel e guarda tamanho da amostra
 amostra = df.sample(n=nAmostra, random_state=15)
 
 # print(df.shape)
