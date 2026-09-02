@@ -19,6 +19,13 @@ frequencia_relativa = frequencia_absoluta/len(serie)
 print(frequencia_relativa)
 
 # linguagem mais frequente.
-frequencia_absoluta.idxmax() # retorna o index/nome
-frequencia_absoluta.max() # retorna o valor
+print(frequencia_absoluta.idxmax()) # retorna o index/nome
+
+# gráfico de barras
+frequencia_absoluta.plot(kind="bar")
+plt.title("Frequencia de linguagens")
+plt.xlabel("Lingugaem")
+plt.ylabel("Frequencia")
+plt.show()
+
 
