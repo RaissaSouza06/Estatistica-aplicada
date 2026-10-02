@@ -50,3 +50,20 @@ plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.show()
 
 ###    QUESTÃO 7 - ANÁLISE
+# Cálculos estatísticos para a variável tempo_ms
+media_tempo = df['tempo_ms'].mean()
+mediana_tempo = df['tempo_ms'].median()
+moda_tempo = df['tempo_ms'].mode()  # Como todos os valores aparecem uma vez, o Pandas lista todos eles
+minimo_tempo = df['tempo_ms'].min()
+maximo_tempo = df['tempo_ms'].max()
+amplitude_tempo = maximo_tempo - minimo_tempo
+
+print("--- ESTATÍSTICAS DE TEMPO (ms) ---")
+print(f"Média: {media_tempo} ms")
+print(f"Mediana: {mediana_tempo} ms")
+print(f"Moda: {moda_tempo.values}")
+print(f"Mínimo: {minimo_tempo} ms")
+print(f"Máximo: {maximo_tempo} ms")
+print(f"Amplitude: {amplitude_tempo} ms")
+
+# Média e mediana são próximas? o que isso pode indicar sobre os dados?
