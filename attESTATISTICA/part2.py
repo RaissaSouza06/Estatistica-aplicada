@@ -16,10 +16,10 @@ dados = {
 df = pd.DataFrame(dados)
 
 ###    QUESTÃO 4 - INSPEÇÃO DOS DADOS
-print(df.head(5)) #Mostra as 5 primeiras linhas
-print(df.shape) #retorna as quantidades de linhas e colunas
-print(df.info()) #Exiba as informações do DataFrame
-print(df.describe()) #Exiba o resumo estatístico.
+print(df.head(5)) # Mostra as 5 primeiras linhas
+print(df.shape) # Retorna as quantidades de linhas e colunas
+print(df.info()) # Exibe as informações do DataFrame
+print(df.describe()) # Exibe o resumo estatístico.
 
 ###    QUESTÃO 5 - FREQUENCIA
 # a) Quantidade de usuários por sistema operacional (Frequência Absoluta)
@@ -28,10 +28,9 @@ qtd_usuarios = df['sistema'].value_counts()
 # b) Percentual de usuários por sistema operacional (Frequência Relativa %)
 percentual_usuarios = df['sistema'].value_counts(normalize=True) * 100
 
-# Apresentando os resultados consolidados
 resultado = pd.DataFrame({
-    'Quantidade': qtd_usuarios,
-    'Percentual (%)': percentual_usuarios
+    '\nQuantidade Usuário': qtd_usuarios,
+    'Percentual de Usuário (%)': percentual_usuarios
 })
 
 print(resultado)
@@ -39,26 +38,26 @@ print(resultado)
 ###    QUESTÃO 6 - VISUALIZAÇÃO
 # Criando o gráfico de barras
 plt.figure(figsize=(8, 5))
-qtd_usuarios.plot(kind='bar', color=['#3DDC84', '#000000', '#0078D4'])
+qtd_usuarios.plot(kind='bar', color=["#231BB5", "#49BAD6", '#0078D4'])
 
 plt.title('Quantidade de Usuários por Sistema Operacional')
 plt.xlabel('Sistema Operacional')
 plt.ylabel('Quantidade de Usuários')
 plt.xticks(rotation=0)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
-
 plt.show()
+# Qual SO possui maior frequência na amostra? Android
 
 ###    QUESTÃO 7 - ANÁLISE
-# Cálculos estatísticos para a variável tempo_ms
+# Usando tempo_ms
 media_tempo = df['tempo_ms'].mean()
 mediana_tempo = df['tempo_ms'].median()
-moda_tempo = df['tempo_ms'].mode()  # Como todos os valores aparecem uma vez, o Pandas lista todos eles
+moda_tempo = df['tempo_ms'].mode()  
 minimo_tempo = df['tempo_ms'].min()
 maximo_tempo = df['tempo_ms'].max()
 amplitude_tempo = maximo_tempo - minimo_tempo
 
-print("--- ESTATÍSTICAS DE TEMPO (ms) ---")
+print("\n--- ESTATÍSTICAS DE TEMPO (ms) ---")
 print(f"Média: {media_tempo} ms")
 print(f"Mediana: {mediana_tempo} ms")
 print(f"Moda: {moda_tempo.values}")
@@ -66,4 +65,5 @@ print(f"Mínimo: {minimo_tempo} ms")
 print(f"Máximo: {maximo_tempo} ms")
 print(f"Amplitude: {amplitude_tempo} ms")
 
-# Média e mediana são próximas? o que isso pode indicar sobre os dados?
+# Média e mediana são próximas? o que isso pode indicar sobre os dados? São próximos, o que indica que os 
+# números dentro de tempo_ms estão próximos, sem valores extremos.
